@@ -4,8 +4,14 @@ import Button from "../global/Button";
 const AuthCard = () => {
   const [isAccountCreated, setIsAccountCreated] = useState(false);
   return (
-    <div className="w-[450px] h-[420px] border-2 mx-auto rounded-xl mt-3 shadow-lg px-3 py-4 flex flex-col items-center">
-      <p className="text-xl text-center">{isAccountCreated?'Welcome back!':'Create your account'}</p>
+    <div
+      className={`border mx-auto rounded-xl mt-3 shadow-xl px-3 py-4 flex flex-col items-center ${
+        isAccountCreated ? "h-[350px] w-[400px]" : "h-[420px] w-[450px]"
+      }`}
+    >
+      <p className="text-xl text-center">
+        {isAccountCreated ? "Welcome back!" : "Create your account"}
+      </p>
       {isAccountCreated ? (
         <div className="flex flex-col items-center mt-4 px-4 space-y-8  grow w-full justify-center">
           <Input placeholder={"Enter Email"} />
